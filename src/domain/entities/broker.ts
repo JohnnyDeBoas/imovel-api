@@ -16,4 +16,5 @@ export class Broker extends Entity<BrokerProps> {
 
         return broker;
     }
+    
 }
