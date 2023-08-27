@@ -23,7 +23,10 @@ export class Realty extends Entity<RealtyProps> {
     }
 
     static create(props: RealtyProps, id?: string) {
-        
+        if (!props.title || !props.description || !props.localiton || !props.localiton.cep) {
+            throw new Error('Required field not filled.');
+        }
+
         const realty = new Realty({...props, createdAt: props.createdAt ?? new Date(),}, id);
 
         return realty;
